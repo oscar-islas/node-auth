@@ -8,6 +8,7 @@ const bcrypt = require("bcryptjs");
 const cookieParser = require("./middlewares/cookie-parser");
 const cors = require('cors');
 const app = express();
+const port = process.env.PORT || 8080;
 
 let fileUrl = path.join(__dirname, "users.json");
 app.use(cors());
@@ -163,6 +164,6 @@ app.delete("/users", async (req, res) => {
   });
 });
 
-app.listen(8080, () => {
+app.listen(port, () => {
   console.log("Servidor iniciado en el puerto 8080");
 });
